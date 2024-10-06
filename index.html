@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CO2 Emissions in 2021</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+  <!-- Include Google Fonts for better typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container">
+    
+    <h1>CO2 Emissions</h1>
+  
+    <h2>CO2 Emissions map in 2021</h2>
+    <div id="choropleth_map"></div>  
+    <h2>CO2 Emissions by Country in 2021</h2>
+    <div id="bar_chart"></div>
+    
+  </div>
+
+  <script type="text/javascript">
+    var spec2 = "js/Emmission_map.vg.json";
+    vegaEmbed('#choropleth_map', spec2).then(function(result) {
+      // Access the Vega view instance as result.view
+    }).catch(console.error);
+
+    var spec1 = "js/Emmission_bar.vg.json";
+    vegaEmbed('#bar_chart', spec1).then(function(result) {
+      // Access the Vega view instance as result.view
+    }).catch(console.error);
+  </script>
+</body>
+</html>
